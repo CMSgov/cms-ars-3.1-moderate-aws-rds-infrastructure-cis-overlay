@@ -24,24 +24,24 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 ```
 mkdir profiles
 cd profiles
-git clone https://github.cms.gov/ispg-dev/cms-ars-3.1-moderate-oracle-mysql-ee-5.7-cis-overlay.git
-git clone https://github.com/mitre/oracle-mysql-ee-5.7-cis-baseline.git
-cd cms-ars-3.1-moderate-oracle-mysql-ee-5.7-cis-overlay
+git clone https://github.cms.gov/ispg-dev/cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay.git
+git clone https://github.com/mitre/aws-rds-infrastructure-cis-baseline.git
+cd cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay
 bundle install
 cd ..
-inspec exec cms-ars-3.1-moderate-oracle-mysql-ee-5.7-cis-overlay --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
+inspec exec cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
 ```
 
 For every successive run, follow these steps to always have the latest version of this overlay and dependent profiles:
 
 ```
-cd profiles/oracle-mysql-ee-5.7-cis-baseline
+cd profiles/aws-rds-infrastructure-cis-baseline
 git pull
-cd ../cms-ars-3.1-moderate-oracle-mysql-ee-5.7-cis-overlay
+cd ../cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay
 git pull
 bundle install
 cd ..
-inspec exec cms-ars-3.1-moderate-oracle-mysql-ee-5.7-cis-overlay --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
+inspec exec cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay --attrs=<path_to_your_attributes_file/name_of_your_attributes_file.yml> --target=ssh://<your_target_host_name_or_ip_address> --user=<target_account_with_administrative_privileges> --password=<password_for_target_account> --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
 ```
 
 ## Viewing the JSON Results
