@@ -1,1 +1,20 @@
 
+name: cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay
+title: .
+maintainer: CMS InSpec Dev team
+copyright: .
+copyright_email: 
+license: Apache-2.0
+summary: 
+version: 0.1.0
+supports:
+  platform: aws
+inspec_version: "~> 3.0"
+
+attributes:
+  - name: db_instance_identifier
+    type: array
+    default: ['test', 'post']
+  - name: vpc_security_group_id
+    type: array
+    default: ['sg-04de43a5bab54586c']
