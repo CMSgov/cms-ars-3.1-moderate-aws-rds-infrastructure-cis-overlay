@@ -5,16 +5,26 @@ maintainer: CMS InSpec Dev team
 copyright: .
 copyright_email: 
 license: Apache-2.0
-summary: 
+summary: .
 version: 0.1.0
 supports:
   platform: aws
 inspec_version: "~> 3.0"
 
+depends:
+- name: aws-rds-infrastructure-cis-baseline
+  path: ../aws-rds-infrastructure-cis-baseline
+
 attributes:
   - name: db_instance_identifier
     type: array
-    default: ['test', 'post']
+    default: ['test']
+
   - name: vpc_security_group_id
     type: array
-    default: ['sg-04de43a5bab54586c']
+    default: ['sg-043d996b']
+
+  - name: allowed_ip_address_range
+    type: string
+    default: '0.0.0.0/0'
+
