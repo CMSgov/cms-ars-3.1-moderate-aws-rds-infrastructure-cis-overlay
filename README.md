@@ -16,6 +16,9 @@ db_instance_identifier: ['test', 'post']
     
 # Description: Security group identifier for virtual private cloud.
 vpc_security_group_id: ['sg-04de43a5bab54586c']
+
+# Description: Allowed range of IP addresses
+allowed_ip_address_range: '0.0.0.0/0'
 ```
 
 ## Running This Overlay
