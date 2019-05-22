@@ -11,14 +11,14 @@ Latest versions and installation options are available at the [InSpec](http://in
 The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
  
 ```
-# Description: Identifier for the database instance.
-db_instance_identifier: ['test', 'post']
+# Description: Identifier for the database instance (e.g., ['test', 'post']).
+db_instance_identifier: []
     
-# Description: Security group identifier for virtual private cloud.
-vpc_security_group_id: ['sg-04de43a5bab54586c']
+# Description: Security group identifier for virtual private cloud (e.g., ['sg-04de43a5bab54586c']).
+vpc_security_group_id: []
 
-# Description: Allowed range of IP addresses
-allowed_ip_address_range: '0.0.0.0/0'
+# Description: Allowed range of IP addresses (e.g., '0.0.0.0/0').
+allowed_ip_address_range: ''
 ```
 
 ## Running This Overlay
@@ -27,7 +27,7 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 ```
 mkdir profiles
 cd profiles
-git clone https://github.cms.gov/ispg-dev/cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay.git
+git clone https://github.cms.gov/ISPG/cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay.git
 git clone https://github.com/mitre/aws-rds-infrastructure-cis-baseline.git
 cd cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay
 bundle install
