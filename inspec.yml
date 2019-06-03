@@ -14,14 +14,17 @@ depends:
 
 attributes:
   - name: db_instance_identifier
+    description: Identifier for the database instance (e.g., ['test']).
     type: array
-    default: ['test']
+    default: []
 
   - name: vpc_security_group_id
+    description: Virtual private cloud security group identifier (e.g., ['sg-043d996b'])
     type: array
-    default: ['sg-043d996b']
+    default: []
 
   - name: allowed_ip_address_range
+    description: Range of allowed IP addresses (e.g., '0.0.0.0/0')
     type: string
-    default: '0.0.0.0/0'
+    default: ''
 
