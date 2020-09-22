@@ -21,8 +21,9 @@ include_controls 'aws-rds-infrastructure-cis-baseline' do
        aws rds modify-db-instance --db-instance-identifier <your_db_instance>
        --backup- retention-period <backup_retention_period>'
   input('db_instance_identifier').each do |identifier|
-    describe aws_rds_instance(identifier.to_s) do
-      its('backup_retention_period') { should cmp >= 3 }
+      describe aws_rds_instance(identifier.to_s) do
+        its('backup_retention_period') { should cmp >= 3 }
+      end
     end
   end
 end
