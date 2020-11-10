@@ -125,4 +125,4 @@ No other use other than that granted to the U. S. Government, or to those acting
 For further information, please contact The MITRE Corporation, Contracts Management Office, 7515 Colshire Drive, McLean, VA  22102-7539, (703) 983-6000.
 
 ### NOTICE
-DISA STIGs are published by DISA IASE, see: https://iase.disa.mil/Pages/privacy_policy.aspx
+CIS Benchmarks are published by the Center for Internet Security (CIS), see: https://www.cisecurity.org/.
