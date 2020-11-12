@@ -69,6 +69,7 @@ inspec exec https://github.com/CMSgov/cms-ars-3.1-moderate-aws-rds-infrastructur
   [Full exec options](https://docs.chef.io/inspec/cli/#options-3)
 
 ## Running This Overlay from a local Archive copy
+
 If your runner is not always expected to have direct access to GitHub, use the following steps to create an archive bundle of this overlay and all of its dependent tests:
 
 (Git is required to clone the InSpec profile using the instructions below. Git can be downloaded from the [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) site.)
@@ -79,7 +80,8 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 mkdir profiles
 cd profiles
 git clone https://github.com/CMSgov/cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay.git
-inspec exec cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --target aws:// --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
+inspec archive cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay
+inspec exec <name of generated archive> --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --target aws:// --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
 ```
 
 For every successive run, follow these steps to always have the latest version of this overlay and dependent profiles:
@@ -88,7 +90,8 @@ For every successive run, follow these steps to always have the latest version o
 cd profiles/cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay
 git pull
 cd ..
-inspec exec cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --target aws:// --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
+inspec archive cms-ars-3.1-moderate-aws-rds-infrastructure-cis-overlay --overwrite
+inspec exec <name of generated archive> --input-file=<path_to_your_inputs_file/name_of_your_inputs_file.yml> --target aws:// --reporter=cli json:<path_to_your_output_file/name_of_your_output_file.json> 
 ```
 
 ## Using Heimdall for Viewing the JSON Results
